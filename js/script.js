@@ -119,3 +119,11 @@ switch (num) {
         console.log('Уляля!');
         break;
 }
+
+
+let num = 50;
+
+while (num < 55) {
+    console.log(num);
+    num++;
+}
