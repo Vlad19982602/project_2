@@ -231,4 +231,55 @@ writeYourGenres();
 
 ///////////////////////////////////////////////////////////////////////////
 
+const options = {
+    name: 'test',
+    width: 1024,
+    heidth: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log("Test");
+    }
+ };
+
+ options.makeTest();
+
+ const {border, bg} = options.colors;
+ console.log(border, bg);
+
+//console.log(options.name);
+
+//console.log(Object.keys(options)); // Получаем ключи с рбъекта
+//console.log(Object.keys(options.length)); //Кол-во элементов в массиве
+
+
+//delete options.name;
+
+//console.log(options);
+let counter = 0;
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for ( let i in options[key]) {
+            console.log(`Свойство ${i}, имеет значение ${options[key][i]}`);
+            counter++;
+        }
+    } else {
+        console.log(`Свойство ${key}, имеет значение ${options[key]}`);
+        counter++;
+    } 
+}
+console.log(counter);
+
+/*for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for ( let i in options[key]) {
+            console.log(`Свойство ${i}, имеет значение ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key}, имеет значение ${options[key]}`);
+    } 
+}*/
+
 
