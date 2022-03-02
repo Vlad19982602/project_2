@@ -98,16 +98,15 @@ if (personalMovieDB.count < 10) {
 
 console.log(personalMovieDB);
 
-try {
-    function showFirstMessage() {
-        console.log("Hello world!");
-    }
 
-    showFirstMessage();
+function showFirstMessage() {
+    console.log("Hello world!");
 }
-finally {
-    console.log("brikma");
-}
+
+showFirstMessage();
+
+
+
 
 
 
@@ -165,4 +164,9 @@ finally {
 
  //   console.log(i);
 //}
+
+
+
+
+
 
