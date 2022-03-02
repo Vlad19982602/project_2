@@ -44,70 +44,106 @@
 
 
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+}
+
+start();
+
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
-   actors: {},
-   genres: {},
-   privat: false
+    actors: {},
+    genres: {},
+    privat: false
 };
-//const   a = prompt('Один из послежних просмотренных фильмов?', ''),
+//const  a = prompt('Один из послежних просмотренных фильмов?', ''),
 //       b = prompt('На сколько оцените его?', ''),
-//       c = prompt('Один из послежних просмотренных фильмов?', ''),
+//      c = prompt('Один из послежних просмотренных фильмов?', ''),
 //       d = prompt('На сколько оцените его?', '');
+
+
 //personalMovieDB.movies[a] = b;
-//personalMovieDB.movies[c] = d;
+//personalMovieDB.movies[c] = d;     
 
-//for (let i = 0; i < 2; i++) {
-//   const   a = prompt('Один из послежних просмотренных фильмов?', ''),
-//            b = prompt('На сколько оцените его?', '');
-//
-//    personalMovieDB.movies[a] = b;
-//}
 
-for (let i = 0; i < 2; i++) {
-    const   a = prompt('Один из послежних просмотренных фильмов?', ''),
-            b = prompt('На сколько оцените его?', '');
 
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log('Done');
-
-    } else {
-        console.log('Error');
-        i--;
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const   a = prompt('Один из послежних просмотренных фильмов?', ''),
+                b = prompt('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log('done');
+    
+        } else {
+            console.log('error');
+            i--;
+        }
     }
-
-    personalMovieDB.movies[a] = b;
 }
 
+rememberMyFilms();
 
-if (personalMovieDB.count < 10) {
-    console.log("Просмотренодовольно мало фильмов");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log("Вы классический зритель");
-} else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман!");
-} else {
-    console.log("Произошла ошибка!");
-}
+
+
         
 
-
-
-console.log(personalMovieDB);
-
-
-function showFirstMessage() {
-    console.log("Hello world!");
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log("Просмотрено довольно мало фильмов");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log("Вы классический зритель");
+    } else if (personalMovieDB.count >= 30) {
+        console.log("Вы киноман!");
+    } else {
+        console.log("Произошла ошибка!");
+    }
 }
 
-showFirstMessage();
+detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+        personalMovieDB.genres[i - 1] = genre;
+    }
+}
+
+writeYourGenres();
+//function showFirstMessage() {
+//   console.log("Hello world!");
+//}
+
+//showFirstMessage();
 
 
 
+//const logger = function() {
+//        console.log("Hello");
+//};
 
+//logger();
+
+//const calc = (a,b) => {//
+//   console.log('1');
+//   return a + b;
+//};
 
 
 
@@ -166,7 +202,33 @@ showFirstMessage();
 //}
 
 
+//const str = "test";
+//const arr = [1,2,4];
 
+//console.log(str[2]);
 
+//console.log(str.toLocaleUpperCase());
+
+//let fruit = "Some fruit";
+
+//console.log(fruit.indexOf("fruit"));
+
+//console.log(fruit.indexOf("qrot"));
+
+//const logg = "Hello world!";
+
+//console.log(logg.slice(6, 11));
+//console.log(logg.slice(6));
+
+//console.log(logg.substring(6, 11));
+
+//const num = 12.2;
+//console.log(Math.round(num));
+
+////const test = "12.2px";
+////console.log(parseInt(test));
+////console.log(parseFloat(test));
+
+///////////////////////////////////////////////////////////////////////////
 
 
