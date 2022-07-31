@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jshint": "^2.13.4"
+    "jshint": "^2.13.5"
   }
 }
